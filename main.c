@@ -1,28 +1,37 @@
 
 
-#define SIZE        3
+#define SIZE        4
+
+void square_array(int a[], int size);
+void print_array(int a[], int size);
 
 int main(int argc, char *argv[])
 {
-    int i;
-    int grade[SIZE];
-    int score[SIZE];
-    
-    for (i=0;i<SIZE;i++)
-    {
-        grade[i] = rand()%100;
-    }
-     for (i=0;i<SIZE;i++)
-    {
-        score[i] = grade[i];
-    }
-    
-    #if 1
-    for (i=0;i<SIZE;i++)
-        printf("grade[%i] = %i, grade[%i] = %i\n", i, grade[i], i, score[i]);
-    #endif
-    
-  system("PAUSE");	
-  return 0;
+    int list[SIZE] = {1, 2, 3, 4};
+
+    print_array(list, SIZE);
+    square_array(list, SIZE);
+    print_array(list, SIZE);
+
+    system("PAUSE");
+    return 0;
 }
- 
+    
+void square_array(int a[], int size)
+{
+    int i;
+
+    for (i = 0; i < size; i++)
+        a[i] = a[i] * a[i];
+}
+
+void print_array(int a[], int size)
+{
+    int i;
+
+    for (i = 0; i < size; i++)
+        printf("%3d", a[i]);
+    printf("\n");
+}
+
+
